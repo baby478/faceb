@@ -1,0 +1,18 @@
+node_modules
+dist
+website/build
+*.xcworkspace
+**/Pods/
+**/xcuserdata/
+build/
+yarn-error.log
+
+# Android / Intellij
+local.properties
+*.iml
+.gradle/
+.idea
+.externalNativeBuild
+
+# Mac OS X
+*.DS_Store

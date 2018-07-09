@@ -1,0 +1,22 @@
+project 'Sample.xcodeproj'
+source 'https://github.com/facebook/Sonar.git'
+source 'https://github.com/CocoaPods/Specs'
+# Uncomment the next line to define a global platform for your project
+swift_version = "4.1"
+
+
+target 'Sample' do
+
+  pod 'SonarKit', '~>0.0.1'
+  post_install do |installer|
+
+        installer.pods_project.targets.each do |target|
+            if ['YogaKit'].include? target.name
+                target.build_configurations.each do |config|
+                    config.build_settings['SWIFT_VERSION'] = swift_version
+                end
+            end
+        end
+    end
+
+end
